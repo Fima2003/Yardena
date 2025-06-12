@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image, Note, and Location Carousel</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Beach Walk</h1>
+
+      <div class="memory-display-container">
+        <div id="memoryDisplay" class="memory-display"></div>
+      </div>
+
+      <div id="currentMap"></div>
+    </div>
+    <script src="memoriesData.js"></script>
+    <script src="script.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOtP-LgXGwtTqfWpMPS7cLr8FZNJQDkQ8&callback=initMap"
+    ></script>
+  </body>
+</html>

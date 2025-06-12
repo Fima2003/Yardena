@@ -1,0 +1,147 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px; /* Increased max-width for carousel */
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input,
+textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.memory-display-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent items from wrapping */
+  margin-top: 40px;
+  padding-bottom: 20px; /* Space for potential scrollbar */
+  /* Add extra padding-top to give space for the uplifted item */
+  padding-top: 5px; /* Adjust this value as needed, just enough to prevent cropping */
+  overflow-y: visible; /* Crucial: Allow content to extend vertically outside if it moves */
+}
+
+.memory-display {
+  display: inline-flex; /* Arrange items horizontally */
+  gap: 20px; /* Spacing between memory items */
+  /* Add margin to give space for the uplifted item, if padding-top on container isn't enough */
+  margin-top: 5px; /* Or move padding-top from container to here if preferred */
+}
+
+.memory-item {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  width: 300px; /* Fixed width for each item in the carousel */
+  flex-shrink: 0; /* Prevent items from shrinking */
+  cursor: pointer; /* Indicate clickability */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+
+  /* Ensure positioning context if you were to add absolute children that stick out */
+  position: relative;
+  z-index: 1; /* Give it a z-index to appear above other non-hovered items if needed */
+}
+
+.memory-item:hover {
+  transform: translateY(
+    -10px
+  ); /* Increased lift for clearer effect, adjust as needed */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover */
+  z-index: 10; /* Bring hovered item to the front */
+}
+
+.memory-item.active-memory-item {
+  border: 2px solid #007bff; /* Highlight active item */
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+}
+
+.memory-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.memory-item p {
+  font-size: 1em; /* Adjusted font size */
+  line-height: 1.4; /* Adjusted line height */
+  color: #444;
+  margin-bottom: 15px;
+  overflow: hidden; /* Hide overflowing text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show only 3 lines of note */
+  -webkit-box-orient: vertical;
+  height: 4.2em; /* Approximate height of 3 lines */
+}
+
+.map-container {
+  height: 200px; /* Adjusted map height for carousel item */
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#currentMap {
+  margin-top: 20px;
+  height: 300px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
