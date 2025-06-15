@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -126,7 +131,6 @@ button:hover {
   margin-bottom: 15px;
   overflow: hidden; /* Hide overflowing text */
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Show only 3 lines of note */
   -webkit-box-orient: vertical;
   height: 4.2em; /* Approximate height of 3 lines */
 }
